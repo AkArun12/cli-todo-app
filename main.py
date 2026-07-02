@@ -22,6 +22,21 @@ def add_task(tasks):
     tasks.append(task)
     print("Task added successfully!")
 
+def view_tasks(tasks):
+    if len(tasks)==0:
+        print("No Tasks found.")
+        return
+    print("\n----------------------------------")
+
+    for index, task in enumerate(tasks, start=1):
+        status="completed" if task["completed"] else "Pending"
+
+        print(f"{index}.")
+        print(task["title"])
+        print(f"Status :{status}")
+        print("---------------------------------------")
+
+
 def main():
     while True:
         show_menu()
@@ -30,7 +45,7 @@ def main():
             if choice == 1:
                 add_task(tasks)
             elif choice == 2:
-                print("You selected : View Task")
+                view_tasks(tasks)
             elif choice == 3:
                 print("You selected : Delete Task")
             elif choice == 4:
