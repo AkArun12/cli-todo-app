@@ -1,27 +1,32 @@
-1. 📝 CLI To-Do App (Python)
+# 📝 CLI To-Do App (Python)
 
 A simple command-line To-Do application built using Python.
 This project helps manage daily tasks directly from the terminal with features like adding, viewing, completing, and deleting tasks.
 
-===================================================================
-2. 🚀 Features
-Add new tasks
-View all tasks
-Delete tasks
-Mark tasks as completed
-Persistent storage using JSON (tasks saved between sessions)
-Simple and beginner-friendly CLI interface
-===================================================================
+---
 
+## 🚀 Features
 
-3. 🛠️ Technologies Used
-Python 3
-JSON (for data storage)
-Command Line Interface (CLI)
-===================================================================
+* Add new tasks
+* View all tasks
+* Delete tasks
+* Mark tasks as completed
+* Persistent storage using JSON (tasks saved between sessions)
+* Simple and beginner-friendly CLI interface
 
-4. 📂 Project Structure
+---
 
+## 🛠️ Technologies Used
+
+* Python 3
+* JSON (for data storage)
+* Command Line Interface (CLI)
+
+---
+
+## 📂 Project Structure
+
+```
 CLI-Todo-App/
 │
 ├── main.py              # Main program (entry point)
@@ -32,25 +37,37 @@ CLI-Todo-App/
 ├── README.md            # Project documentation
 ├── .gitignore           # Files to ignore in Git
 └── venv/                # Virtual environment (not pushed to GitHub)
+```
 
-===================================================================
+---
 
-5. ▶️ To Run
-=> Clone the repository 
+## ▶️ How to Run
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/AkArun12/cli-todo-app.git
+```
 
-=> Navigate in to the project :
- cd cli-todo-app
+### 2. Navigate into the project
 
-=> Run the program:
-    python main.py
+```bash
+cd cli-todo-app
+```
 
-===================================================================
+### 3. Run the program
 
-6. 🧭 How to Use
+```bash
+python main.py
+```
+
+---
+
+## 🧭 How to Use
 
 Once the program starts, you'll see a menu like:
 
+```
 ===== CLI TO-DO APP =====
 
 1. Add Task
@@ -58,52 +75,69 @@ Once the program starts, you'll see a menu like:
 3. Delete Task
 4. Mark Task as Complete
 5. Exit
-Example Workflow:
-Choose 1 → Enter a task name
-Choose 2 → View all tasks
-Choose 4 → Mark a task as completed
-Choose 3 → Delete a task
-Choose 5 → Exit program
+```
 
-===================================================================
+### Example Workflow:
 
-7. 💾 Data Storage
+* Choose `1` → Enter a task name
+* Choose `2` → View all tasks
+* Choose `4` → Mark a task as completed
+* Choose `3` → Delete a task
+* Choose `5` → Exit program
 
-All tasks are stored in a tasks.json file.
+---
+
+## 💾 Data Storage
+
+All tasks are stored in a `tasks.json` file.
 
 Example format:
 
+```json
 [
-    {
-        "id": 1,
-        "title": "Learn Python",
-        "completed": false
-    },
-    {
-        "id": 2,
-        "title": "Build CLI Project",
-        "completed": true
-    }
+  {
+    "id": 1,
+    "title": "Learn Python",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "title": "Build CLI Project",
+    "completed": true
+  }
 ]
-===================================================================
+```
 
-8. 📌 Future Improvements
-Add due dates for tasks
-Add priority levels (High / Medium / Low)
-Search and filter tasks
-Colorful terminal UI (using rich)
-Task statistics (completed vs pending)
-Unit tests with pytest
-Convert into a web app using Flask or FastAPI
-===================================================================
+---
 
-9. 🧠 What I Learned From This Project
-Python fundamentals (loops, functions, dictionaries)
-File handling and JSON
-Structuring a real-world Python project
-Building CLI applications
-Using Git and GitHub for version control
+## 📌 Future Improvements
 
-10. 👨‍💻 Author
-Arun Kathariya
-GitHub: https://github.com/AkArun12
+* Add due dates for tasks
+* Add priority levels (High / Medium / Low)
+* Search and filter tasks
+* Colorful terminal UI (using `rich`)
+* Task statistics (completed vs pending)
+* Unit tests with `pytest`
+* Convert into a web app using Flask or FastAPI
+
+---
+
+## 🧠 What I Learned
+
+* Python fundamentals (loops, functions, dictionaries)
+* File handling and JSON
+* Structuring a real-world Python project
+* Building CLI applications
+* Using Git and GitHub for version control
+
+---
+
+## 👨‍💻 Author
+
+**Arun Kathariya**
+GitHub: [https://github.com/AkArun12]
+
+---
+
+
+
