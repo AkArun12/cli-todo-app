@@ -29,7 +29,7 @@ def view_tasks(tasks):
     print("\n----------------------------------")
 
     for index, task in enumerate(tasks, start=1):
-        status="[x]" if task["completed"] else "[ ]"
+        status="[X]" if task["completed"] else "[ ]"
 
         print(f"{index}. {status} {task['title']}")
        
@@ -41,17 +41,17 @@ def save_tasks(tasks):
     with open("tasks.json","w") as file:
         json.dump(tasks,file, indent=4)
 
-def load_task():
+def load_tasks():
     try:
         with open("tasks.json","r") as file:
             return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         return []
-tasks=load_task()
+tasks=load_tasks()
 
 #Function to delete task:
 
-def delete_tasks(tasks):
+def delete_task(tasks):
     if len(tasks)==0:
         print("No tasks found!")
         return
@@ -83,6 +83,7 @@ def mark_complete(tasks):
         task_id=int(input("Enter a task number to mark as complete:"))
         if 1<=task_id<=len(tasks):
             tasks[task_id-1]["completed"]=True
+            save_tasks(tasks)
             print("Task marked as completed")
         else:
             print("Invalid task number.")
@@ -95,14 +96,14 @@ def main():
     while True:
         show_menu()
         try:
-            choice=int(input("Enter ypur choice: "))
+            choice=int(input("Enter your choice: "))
             if choice == 1:
                 add_task(tasks)
                 save_tasks(tasks)
             elif choice == 2:
                 view_tasks(tasks)
             elif choice == 3:
-                delete_tasks(tasks)
+                delete_task(tasks)
             elif choice == 4:
                 mark_complete(tasks)
             elif choice == 5:
