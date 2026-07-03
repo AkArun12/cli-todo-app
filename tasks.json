@@ -2,7 +2,7 @@
     {
         "id": 2,
         "title": "Learn c++",
-        "completed": false
+        "completed": true
     },
     {
         "id": 3,
