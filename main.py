@@ -50,6 +50,26 @@ def load_task():
         return []
 tasks=load_task()
 
+#Function to delete task:
+
+def delete_tasks(tasks):
+    if len(tasks)==0:
+        print("No tasks found!")
+        return
+    
+    view_tasks(tasks)
+    try:
+        task_id=int(input("Enter the task ID to delete: "))
+        if 1<= task_id<=len(tasks):
+            deleted_task=tasks.pop(task_id -1)
+            save_tasks(tasks)
+            print(f"Task '{deleted_task['title']}' deleted successfully")
+
+        else:
+            print("Invalid task id")
+    
+    except ValueError:
+        print("Please enter a valid number.")
 
 
 def main():
@@ -63,7 +83,7 @@ def main():
             elif choice == 2:
                 view_tasks(tasks)
             elif choice == 3:
-                print("You selected : Delete Task")
+                delete_tasks(tasks)
             elif choice == 4:
                 print("You selected : Mark Complete") 
             elif choice == 5:
