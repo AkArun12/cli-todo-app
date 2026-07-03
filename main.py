@@ -42,6 +42,14 @@ def save_tasks(tasks):
     with open("tasks.json","w") as file:
         json.dump(tasks,file, indent=4)
 
+def load_task():
+    try:
+        with open("tasks.json","r") as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+tasks=load_task()
+
 
 
 def main():
@@ -51,6 +59,7 @@ def main():
             choice=int(input("Enter ypur choice: "))
             if choice == 1:
                 add_task(tasks)
+                save_tasks(tasks)
             elif choice == 2:
                 view_tasks(tasks)
             elif choice == 3:
