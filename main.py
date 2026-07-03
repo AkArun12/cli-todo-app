@@ -29,11 +29,10 @@ def view_tasks(tasks):
     print("\n----------------------------------")
 
     for index, task in enumerate(tasks, start=1):
-        status="completed" if task["completed"] else "Pending"
+        status="[x]" if task["completed"] else "[ ]"
 
-        print(f"{index}.")
-        print(task["title"])
-        print(f"Status :{status}")
+        print(f"{index}. {status} {task['title']}")
+       
         print("---------------------------------------")
 
 #Function to save data:
@@ -71,6 +70,26 @@ def delete_tasks(tasks):
     except ValueError:
         print("Please enter a valid number.")
 
+# Function for task completion:
+
+def mark_complete(tasks):
+    if len(tasks)==0:
+        print("No tasks found")
+        return
+    
+    view_tasks(tasks)
+
+    try:
+        task_id=int(input("Enter a task number to mark as complete:"))
+        if 1<=task_id<=len(tasks):
+            tasks[task_id-1]["completed"]=True
+            print("Task marked as completed")
+        else:
+            print("Invalid task number.")
+    except ValueError:
+        print("Please enter a valid number")
+
+
 
 def main():
     while True:
@@ -85,7 +104,7 @@ def main():
             elif choice == 3:
                 delete_tasks(tasks)
             elif choice == 4:
-                print("You selected : Mark Complete") 
+                mark_complete(tasks)
             elif choice == 5:
                 print("You selected : Exit")
                 break
