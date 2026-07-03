@@ -1,3 +1,24 @@
+# Virtual environment
 venv/
+env/
+.venv/
+
+# Python cache files
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints (if ever used)
+.ipynb_checkpoints/
+
+# Environment variables (future use)
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files (optional but recommended)
+.vscode/
+.idea/
