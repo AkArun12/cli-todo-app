@@ -1,3 +1,4 @@
+import json
 tasks=[]
 def show_menu():
     print("\n=========================")
@@ -9,8 +10,7 @@ def show_menu():
     print("4. Mark Complete\n")
     print("5. Exit\n")
 
-
-    #Function to Add Tasks.
+#Function to Add Tasks.
 
 def add_task(tasks):
     title=input("Enter the task: ")
@@ -35,6 +35,13 @@ def view_tasks(tasks):
         print(task["title"])
         print(f"Status :{status}")
         print("---------------------------------------")
+
+#Function to save data:
+
+def save_tasks(tasks):
+    with open("tasks.json","w") as file:
+        json.dump(tasks,file, indent=4)
+
 
 
 def main():
